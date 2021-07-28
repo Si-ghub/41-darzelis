@@ -10,9 +10,12 @@ class Kindergarden {
         console.log(`"${this.name}" can accept 3 kids.`);
     }
 
-    updateKidsLimit(newMaxKidsNumber) {
-        this.maxKidsnumber = newMaxKidsNumber;
-        console.log(`"${this.name}" can accept ${newMaxKidsNumber} kids now.`);
+    updateKidsLimit(newLimit) {
+        if (this.kidsList.length >= newLimit) {
+            console.log(`"${this.name}" can not update kids limit right now.`);
+        } else {
+            console.log(`"${this.name}" can accept ${newLimit} kids now.`);
+        }
     }
 
     addKid(kidName) {
@@ -22,16 +25,6 @@ class Kindergarden {
         } else {
             console.log(`${kidName} can not enter "${this.name}" kindergarden - it's at a full capacity of 5 kids.`);
         }
-    }
-
-    updateKidsLimit(newMaxKidsNumber) {
-        if (this.kidsList.length > newMaxKidsNumber) {
-            console.log(`"${this.name}" can not update kids limit right now.`);
-        } else {
-            console.log(`"${this.name}" can accept ${newMaxKidsNumber} kids now.`);
-
-        }
-
     }
 
     sayHi() {
